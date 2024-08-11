@@ -12,13 +12,13 @@ namespace RhubarbGeekNzActiveObject
     {
         static void Main(string[] args)
         {
-            Guid iid=typeof(IHelloWorld).GUID;
+            Guid iid = typeof(IHelloWorld).GUID;
             CoRegisterPSClsid(ref iid, ref iid);
 
             Guid clsid = new Guid("{1cb0313b-aec5-407a-b4be-058e5e765a6d}");
             GetActiveObject(ref clsid, IntPtr.Zero, out object active);
 
-            IHelloWorld helloWorld=active as IHelloWorld;
+            IHelloWorld helloWorld = active as IHelloWorld;
 
             string result = helloWorld.GetMessage(1);
 

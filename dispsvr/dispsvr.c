@@ -171,7 +171,7 @@ static IHelloWorldVtbl CHelloWorld_IHelloWorldVtbl =
 	CHelloWorld_IHelloWorld_GetMessage
 };
 
-static STDMETHODIMP CreateInstance(const OLECHAR *typeLibFileName, IUnknown ** ppvObject)
+static STDMETHODIMP CreateInstance(const OLECHAR* typeLibFileName, IUnknown** ppvObject)
 {
 	ITypeLib* piTypeLib = NULL;
 	HRESULT hr = LoadTypeLibEx(typeLibFileName, REGKIND_NONE, &piTypeLib);
@@ -218,7 +218,7 @@ static BOOL WINAPI ctrlHandler(DWORD dw)
 	return SetEvent(globalEvent);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
 	HRESULT hr;
 	OLECHAR typeLibFileName[260];
@@ -228,7 +228,7 @@ int main(int argc, char **argv)
 	{
 		if (typeLibFileName[len] == '\\')
 		{
-			wcscpy_s(typeLibFileName + 1 + len,(sizeof(typeLibFileName)/sizeof(typeLibFileName[0]))-len-1, L"displib.dll");
+			wcscpy_s(typeLibFileName + 1 + len, (sizeof(typeLibFileName) / sizeof(typeLibFileName[0])) - len - 1, L"displib.dll");
 			break;
 		}
 	}
