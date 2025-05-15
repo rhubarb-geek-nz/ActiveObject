@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  ****/
 
-#include<windows.h>
+#include <windows.h>
 #include <stdio.h>
 #include <displib_h.h>
 
